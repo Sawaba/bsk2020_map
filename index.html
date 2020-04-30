@@ -46,12 +46,12 @@
 </head>
 <body>
 	<!--ADD THE FORM EMBEDURL BELOW-->
-	<meta itemprop="embedUrl" content="https://docs.google.com/forms/d/e/1FAIpQLSe-4qtJgmjo5Ev1U9VMjQy0YEakprUso5N1J4DA9xxU-lHDHw/viewform?embedded=true">
-
+	<meta itemprop="embedUrl" content="https://docs.google.com/forms/d/e/1FAIpQLSdo4XGpTkB92Ofd9hPft0RcvdpwY2PXmO4_Dk9mfwKvxmajUQ/viewform?embedded=true">
+	
 	<!--ADD THE FORM RESPONSE ACTION HERE, WITH A REDIRECT-->
 	<script type="text/javascript">var submitted=false;</script>
 	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='http://sawaba.github.io/bsk2020_map/results/';}"></iframe>
-	<form action="https://docs.google.com/forms/d/e/1FAIpQLSe-4qtJgmjo5Ev1U9VMjQy0YEakprUso5N1J4DA9xxU-lHDHw/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
+	<form action="https://docs.google.com/forms/d/e/1FAIpQLSdo4XGpTkB92Ofd9hPft0RcvdpwY2PXmO4_Dk9mfwKvxmajUQ/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
 		<div class="container">
 			<div class="jumbotron starter-template">
 				<h1>BSides Knoxville 2020 Attendee Map</h1>
@@ -105,7 +105,7 @@
 		$('#entry_126339808').attr('value', x);
 
 		// Build the map
-		L.mapbox.accessToken = 'pk.eyJ1Ijoia2VybmVsc25kcnMiLCJhIjoiY2luOTZhMDg3MW1rZHRta3NpbHo5dXc4YiJ9.fe9jvqMz6sZh_h8Yx9olfw';
+		L.mapbox.accessToken = 'pk.eyJ1Ijoic2F3YWJhIiwiYSI6ImNrOW4zN2prNDBiYjAzbnBkaXloMTR4MHAifQ.80wKidIRqnYUYry5hIQMJA';
 		var map = L.mapbox.map('map', 'mapbox.streets', {scrollWheelZoom:false}).setView([y, x], z);
 
 		// Update these values as the map gets dragged around
