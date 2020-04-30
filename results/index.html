@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <meta charset=utf-8 />
     <title>FPV Chat Members</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
@@ -40,8 +40,8 @@
 
     <div id='content'>
         <div class="sidecontainer">
-            <h1>FPV Chat Members</h1>
-            <h4>A map of participants in the <a target="_blank" href="http://fpv-chat.com/">FPVC</a> Slack community | <a target="_blank" href="http://kernelsndrs.github.io/FPVC_map/">Add yourself!</a></h4>
+            <h1>BSides Knoxville 2020 Attendees</h1>
+            <h4>A map of BSK2020 attendees | <a target="_blank" href="http://sawaba.github.io/bsk2020_map/">Add yourself!</a></h4>
         </div>
     </div>
 
@@ -50,8 +50,8 @@
     <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
 
     <script>
-    $.getJSON("https://spreadsheets.google.com/feeds/list/1Dvls_Hk-goeydu4kJoRWwS_ZmD55scbvG-wEugmYt54/1/public/values?alt=json", function(data) {
-        L.mapbox.accessToken = 'pk.eyJ1Ijoia2VybmVsc25kcnMiLCJhIjoiY2luOTZhMDg3MW1rZHRta3NpbHo5dXc4YiJ9.fe9jvqMz6sZh_h8Yx9olfw';
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1uLFblOrHh7fSBlBxlfH1QgpGvdakeVHvIZCCqjWkqwo/1/public/values?alt=json", function(data) {
+        L.mapbox.accessToken = 'pk.eyJ1Ijoic2F3YWJhIiwiYSI6ImNrOW4zN2prNDBiYjAzbnBkaXloMTR4MHAifQ.80wKidIRqnYUYry5hIQMJA';
         var map = L.mapbox.map('map', 'mapbox.mapbox-streets-v7')
 
         var brewers = data.feed.entry;
@@ -67,7 +67,7 @@
                         'marker-color': '#227FBB',
                         'marker-size': 'large',
                         'marker-symbol': 'beer',
-                        url: 'https://fpvchat.slack.com/team/' + brewers[i].gsx$name.$t
+                        url: 'https://bsidesknoxville.com' + brewers[i].gsx$name.$t
                     },
                     geometry: {
                         type: 'Point',
