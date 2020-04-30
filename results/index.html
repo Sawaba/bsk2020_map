@@ -41,7 +41,7 @@
     <div id='content'>
         <div class="sidecontainer">
             <h1>BSides Knoxville 2020 Attendees</h1>
-            <h4>A map of BSK2020 attendees | <a target="_blank" href="http://sawaba.github.io/bsk2020_map/">Add yourself!</a></h4>
+            <h4>A map of <a href="https://bsidesknoxville.com">BSides Knoxville 2020</a> attendees | <a target="_blank" href="http://sawaba.github.io/bsk2020_map/">Add yourself!</a> | <span id="pilot-count"></span> Neighbors and counting...</h4>
         </div>
     </div>
 
@@ -52,10 +52,21 @@
     <script>
     $.getJSON("https://spreadsheets.google.com/feeds/list/1uLFblOrHh7fSBlBxlfH1QgpGvdakeVHvIZCCqjWkqwo/1/public/values?alt=json", function(data) {
         L.mapbox.accessToken = 'pk.eyJ1Ijoic2F3YWJhIiwiYSI6ImNrOW4zN2prNDBiYjAzbnBkaXloMTR4MHAifQ.80wKidIRqnYUYry5hIQMJA';
-        var map = L.mapbox.map('map', 'mapbox.mapbox-streets-v7')
+        var map = L.mapbox.map('map', 'mapbox.streets', {
+            minZoom: 2,
+   	        // These options apply to the tile layer in the map.
+	        tileLayer: {
+        	    // This map option disables world wrapping. by default, it is false.
+	            continuousWorld: false,
+        	    // This option disables loading tiles outside of the world bounds.
+	            noWrap: true
+	        }
+	    });
+
 
         var brewers = data.feed.entry;
 
+        $("#pilot-count").text(brewers.length);
         var brewerGeojson = {type: 'FeatureCollection', features: []};
 
         for (var i in brewers) {
